@@ -5,7 +5,7 @@ import { Outlet } from "react-router";
 import Home from "./components/Home/Home";
 
 const App = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   return (
     <>
