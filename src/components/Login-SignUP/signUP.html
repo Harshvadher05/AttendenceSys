@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #eef7ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input {
+            width: 95%;
+            padding: 8px 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+            <label for="role">Select Role:</label>
+            <select id="role" onchange="toggleFields()">
+                <option value="">-- Select --</option>
+                <option value="faculty">Faculty</option>
+                <option value="student">Student</option>
+            </select>
+        </div>
+
+        <div id="facultyFields" class="hidden">
+            <div class="form-group">
+                <label for="facultyName">Faculty Name:</label>
+                <input type="text" id="facultyName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="facultyEmail">Email:</label>
+                <input type="email" id="facultyEmail" placeholder="Enter your email">
+            </div>
+        </div>
+
+        <div id="studentFields" class="hidden">
+            <div class="form-group">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="enrollment">Enrollment Number:</label>
+                <input type="text" id="enrollment" placeholder="Enter your enrollment number">
+            </div>
+            <div class="form-group">
+                <label for="studentEmail">Email:</label>
+                <input type="email" id="studentEmail" placeholder="Enter your email">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm password">
+        </div>
+        <button type="submit">Sign Up</button>
+    </div>
+
+    <script>
+        function toggleFields() {
+            var role = document.getElementById("role").value;
+            document.getElementById("facultyFields").classList.add("hidden");
+            document.getElementById("studentFields").classList.add("hidden");
+
+            if (role === "faculty") {
+                document.getElementById("facultyFields").classList.remove("hidden");
+            } else if (role === "student") {
+                document.getElementById("studentFields").classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
