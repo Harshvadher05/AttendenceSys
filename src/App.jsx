@@ -8,11 +8,11 @@ const App = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Header />
       {isLogin ? <Outlet /> : <Home />}
       <Footer />
-    </>
+    </div>
   );
 };
 
