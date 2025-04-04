@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router";
+import Logo from "../../assets/logo2.png"
+import Home from "../Home/Home.jsx"
 
 export default function Footer() {
   return (
     <footer className="bg-white border-y">
-      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+      <div className="mx-auto w-full max-w-screen-xl p-3 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link to="/" className="flex items-center">
+            <Link to={Home} className="flex items-center">
               <img
-                src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                className="mr-3 h-16"
+                src={Logo}
+                className="mr-2 h-20 w-70"
                 alt="Logo"
               />
             </Link>
@@ -18,11 +20,11 @@ export default function Footer() {
 
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
+              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase">
                 Resources
               </h2>
               <ul className="text-gray-500 font-medium">
-                <li className="mb-4">
+                <li className="mb-2">
                   <Link to="/" className="hover:underline">
                     Home
                   </Link>
@@ -36,11 +38,11 @@ export default function Footer() {
             </div>
 
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
+              <h2 className="mb-4 text-sm font-semibold text-gray-900 uppercase">
                 Legal
               </h2>
               <ul className="text-gray-500 font-medium">
-                <li className="mb-4">
+                <li className="mb-2">
                   <Link to="#" className="hover:underline">
                     Privacy Policy
                   </Link>
@@ -54,7 +56,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <hr className=" mb -2 my-4 border-gray-200 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center">
             © 2025
@@ -62,7 +64,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/harshvadher05/"
               className="hover:underline"
             >
-              _harshvadher
+              _ByteBusters
             </a>
             . All Rights Reserved.
           </span>
