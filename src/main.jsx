@@ -12,8 +12,12 @@ import Home from "./components/Home/Home.jsx";
 import InnerHome from "./components/Home/InnerHome.jsx";
 import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/Contact.jsx";
+<<<<<<< HEAD
 import Signup from "./components/Login-SignUP/SignUP.jsx";
 import Login from "./components/Login-SignUP/login.jsx";
+=======
+
+>>>>>>> 89172292090a017fc453827f59f5f9199f2f5284
 import Sem1 from "./components/Semesters/Sem1.jsx";
 import Sem2 from "./components/Semesters/Sem2.jsx";
 import Sem3 from "./components/Semesters/Sem3.jsx";
