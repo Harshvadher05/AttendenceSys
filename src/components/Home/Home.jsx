@@ -4,19 +4,19 @@ import photo2 from "../../assets/photo2.png";
 import dashboard from "../../assets/dashboard.png";
 import { Link } from "react-router";
 
-function Home () {
+function Home() {
   return (
-
     <div className="flex flex-col min-h-screen">
 
       {/* Header */}
       <header className=" mt-3 h-64 bg-blue-400 flex justify-center items-center text-white text-4xl font-bold shadow-lg uppercase tracking-wide">
-        Attendance Management System
+        ATTENDENCE MANAGEMENT SYSTEM
       </header>
 
       {/* Content Section */}
       <main className="flex flex-col md:flex-row justify-around items-center flex-1 p-10 gap-10">
         {/* Info Box 1 */}
+
         <div className="bg-white text-center p-6 rounded-xl w-full md:w-1/3 shadow-lg border-l-4 border-blue-900 border-r-4 border-blue-900 flex flex-col items-center hover:shadow-2xl hover:bg-blue-100 transition">
           <img src={photo1} alt="Attendance Tracker" className="w-32 h-32 object-cover rounded-lg mb-4" />
           <h3 className="text-blue-900 text-2xl font-semibold">Attendance Tracker</h3>
@@ -40,6 +40,7 @@ function Home () {
 
       <div className="flex justify-center items-center">
         <Link
+        to="/innerhome"
           type="button"
           class="mb-4 text-white bg-blue-900 hover:bg-blue-400 focus:ring-4 focus:outline-none focus:ring-blue-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
         >
@@ -67,7 +68,6 @@ function Home () {
     
 
   );
-};
+}
 
 export default Home;
-

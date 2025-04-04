@@ -13,6 +13,7 @@ import Home from "./components/Home/Home.jsx";
 import InnerHome from "./components/Home/InnerHome.jsx";
 import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/Contact.jsx";
+import Profile from "./components/Profile/Profile.jsx"
 import Signup from "./components/Login-SignUP/SignUP.jsx";
 import Login from "./components/Login-SignUP/login.jsx";
 import Sem1 from "./components/Semesters/Sem1.jsx";
@@ -39,19 +40,16 @@ const router = createBrowserRouter(
       <Route path="innerhome/sem8" element={<Sem8 />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="profile" element={<Profile />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
     </Route>
   )
 );
 
-
-
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-   
-      <RouterProvider router={router} />
-  
+    <RouterProvider router={router} />
   </StrictMode>
+
 );

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
+// import { isLogin } from "../../helper";
 import Logo from "../../assets/logo3.png";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -37,32 +39,39 @@ export default function Header() {
 
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <img
-                src={Logo}
-                className="mr-2 h-20 w-70"
-                alt="Logo"
-              />
+              <img src={Logo} className="mr-2 h-20 w-70" alt="Logo" />
             </Link>
           </div>
 
+          {/* authentication */}
           <div className="flex items-center sm:order-2 mt-2">
-          
-            <Link
-              to="login"
-              className="text-blue-900 bg-gray-200 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
-            >
-              Log in
-            </Link>
-            <Link
-              to="signup"
-              className="text-gray-900 bg-blue-400 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
-            >
-              Sign Up
-            </Link>
+            {isLogin ? (
+              <>
+                <Link
+                  to="login"
+                  className="text-blue-900 bg-gray-200 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
+                >
+                  Log in
+                </Link>
+                <Link
+                  to="signup"
+                  className="text-gray-900 bg-blue-400 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
+                >
+                  Sign Up
+                </Link>
+              </>
+            ) : (
+              <Link
+                to="/"
+                className="text-gray-900 bg-blue-400 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
+              >
+                Sign Out
+              </Link>
+            )}
           </div>
 
           <div
-            className={`w-full lg:flex lg:w-auto lg:order-1 ${
+            className={`w-full lg:flex lg:w-auto sm:order-1 ${
               isMobileMenuOpen ? "block" : "hidden"
             }`}
             id="mobile-menu-2"
@@ -104,6 +113,20 @@ export default function Header() {
                   Contact
                 </NavLink>
               </li>
+              {isLogin ? (
+                <li>
+                  <NavLink
+                    to="/profile"
+                    className={({ isActive }) =>
+                      `block py-2 pr-4 pl-3 duration-200 ${
+                        isActive ? "text-blue-400" : "text-gray-200"
+                      } border-b border-gray-100 lg:border-0 hover:bg-gray-50 lg:hover:bg-transparent hover:text-blue-400 lg:p-0`
+                    }
+                  >
+                    Profile
+                  </NavLink>
+                </li>
+              ) : null}
             </ul>
           </div>
         </div>
