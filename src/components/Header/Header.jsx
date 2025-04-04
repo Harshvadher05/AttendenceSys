@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
-// import logo from "../../assets/logo.png";
+import Logo from "../../assets/logo3.png";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,20 +38,15 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <img
-                // src={logo}
-                className="mr-3 h-auto"
+                src={Logo}
+                className="mr-2 h-20 w-70"
                 alt="Logo"
               />
             </Link>
           </div>
 
           <div className="flex items-center sm:order-2 mt-2">
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+          
             <Link
               to="login"
               className="text-blue-900 bg-gray-200 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
