@@ -57,6 +57,12 @@ function Signup() {
               placeholder="Enrollment Number"
               className="w-full p-2 mb-4 border rounded-md"
             />
+             {/* <input
+              type="file"
+              placeholder="Your Image"
+              className="w-full p-2 mb-4 border rounded-md"
+            />  */}
+
             <input
               type="email"
               placeholder="Email"
@@ -72,6 +78,24 @@ function Signup() {
               placeholder="Confirm Password"
               className="w-full p-2 mb-4 border rounded-md"
             />
+
+          <label className="block mb-2 text-gray-700 font-medium">Upload Your Image</label>
+          <div className="relative w-full mb-4">
+            <input required
+              type="file"
+              accept="image/*"
+              id="fileInput"
+              className="hidden"
+              onChange={(e) => console.log(e.target.files[0])} // Handle file selection
+            />
+            <label
+              htmlFor="fileInput"
+              className="w-full p-2 border rounded-md cursor-pointer bg-white text-gray-600 text-center block"
+            >
+              Choose Your Image
+            </label>
+          </div>
+
           </>
         )}
 
