@@ -10,7 +10,7 @@ function Home () {
       
 
       {/* Header */}
-      <header className="h-64 bg-blue-400 flex justify-center items-center text-white text-4xl font-bold shadow-lg uppercase tracking-wide">
+      <header className="h-2 g-blue-900 flex justify-center items-center text-white text-4xl font-bold shadow-lg uppercase tracking-wide">
         Attendance Management System
       </header>
 
