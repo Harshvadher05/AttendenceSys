@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { setIsLogin } from "../../helper";
 
 function Login() {
   const [role, setRole] = useState("student");
@@ -55,7 +56,7 @@ function Login() {
           </>
         )}
 
-        <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md transition duration-200">
+        <button onClick={setIsLogin(true)} className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md transition duration-200">
           Login
         </button>
       </div>

@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { ClerkProvider } from "@clerk/clerk-react";
 import {
   Route,
   RouterProvider,
@@ -13,6 +12,7 @@ import Home from "./components/Home/Home.jsx";
 import InnerHome from "./components/Home/InnerHome.jsx";
 import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/Contact.jsx";
+import Profile from "./components/Profile/Profile.jsx"
 import Signup from "./components/Login-SignUP/SignUP.jsx";
 import Login from "./components/Login-SignUP/login.jsx";
 import Sem1 from "./components/Semesters/Sem1.jsx";
@@ -39,22 +39,15 @@ const router = createBrowserRouter(
       <Route path="innerhome/sem8" element={<Sem8 />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="profile" element={<Profile />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
     </Route>
   )
 );
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-
-if (!PUBLISHABLE_KEY) {
-  throw new Error("Add your Clerk Publishable Key to the .env file");
-}
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <RouterProvider router={router} />
-    </ClerkProvider>
+    <RouterProvider router={router} />
   </StrictMode>
 );
