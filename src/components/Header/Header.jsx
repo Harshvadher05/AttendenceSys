@@ -5,7 +5,7 @@ import Logo from "../../assets/logo3.png";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -43,40 +43,13 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* authentication */}
-          <div className="flex items-center sm:order-2 mt-2">
-            {isLogin ? (
-              <>
-                <Link
-                  to="login"
-                  className="text-blue-900 bg-gray-200 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
-                >
-                  Log in
-                </Link>
-                <Link
-                  to="signup"
-                  className="text-gray-900 bg-blue-400 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
-                >
-                  Sign Up
-                </Link>
-              </>
-            ) : (
-              <Link
-                to="/"
-                className="text-gray-900 bg-blue-400 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
-              >
-                Sign Out
-              </Link>
-            )}
-          </div>
-
           <div
-            className={`w-full lg:flex lg:w-auto sm:order-1 ${
+            className={`w-full lg:ml-32 lg:flex lg:flex-grow lg:justify-between lg:w-auto sm:order-1 ${
               isMobileMenuOpen ? "block" : "hidden"
             }`}
             id="mobile-menu-2"
           >
-            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            <ul className="flex flex-col sm:items-center mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
                 <NavLink
                   to="home"
@@ -128,6 +101,33 @@ export default function Header() {
                 </li>
               ) : null}
             </ul>
+
+            {/* authentication */}
+            <div className="flex items-center sm:order-2 mt-2">
+              {isLogin ? (
+                <>
+                  <Link
+                    to="login"
+                    className="text-blue-900 bg-gray-200 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
+                  >
+                    Log in
+                  </Link>
+                  <Link
+                    to="signup"
+                    className="text-gray-900 bg-blue-400 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
+                  >
+                    Sign Up
+                  </Link>
+                </>
+              ) : (
+                <Link
+                  to="/"
+                  className="text-gray-900 bg-blue-400 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
+                >
+                  Sign Out
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </nav>
