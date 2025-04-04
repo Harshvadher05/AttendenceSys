@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
-import { isLogin } from "../../helper";
-// import logo from "../../assets/logo.png";
+// import { isLogin } from "../../helper";
+import Logo from "../../assets/logo3.png";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,11 +39,7 @@ export default function Header() {
 
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <img
-                // src={logo}
-                className="mr-3 h-auto"
-                alt="Logo"
-              />
+              <img src={Logo} className="mr-2 h-20 w-70" alt="Logo" />
             </Link>
           </div>
 

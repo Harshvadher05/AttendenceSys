@@ -1,7 +1,3 @@
-import React from 'react'
-
-function helper() {
- const [isLogin, setIsLogin] = React.useState(false);
-}
-
-export {setIsLogin};
+const helper = () => {
+  const [isLogin, setIsLogin] = React.useState(false);
+};
