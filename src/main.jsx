@@ -12,6 +12,8 @@ import Home from "./components/Home/Home.jsx";
 import InnerHome from "./components/Home/InnerHome.jsx";
 import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/Contact.jsx";
+import Signup from "./components/Login-SignUP/SignUP.jsx";
+import Login from "./components/Login-SignUP/login.jsx";
 import Sem1 from "./components/Semesters/Sem1.jsx";
 import Sem2 from "./components/Semesters/Sem2.jsx";
 import Sem3 from "./components/Semesters/Sem3.jsx";
@@ -37,8 +39,8 @@ const router = createBrowserRouter(
 
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
-      {/* <Route path="login" element={<Login />} /> */}
-      {/* <Route path="signup" element={<Signup />} /> */}
+      <Route path="login" element={<Login />} />
+      <Route path="signup" element={<Signup />} />
     </Route>
   )
 );
