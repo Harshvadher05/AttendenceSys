@@ -4,7 +4,7 @@ function    Signup(){
   const [role, setRole] = useState("student");
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-50 p-4">
+    <div className="flex items-center justify-center bg-black p-4">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
         <h2 className="text-3xl font-bold text-blue-500 text-center mb-6">Sign Up</h2>
 

@@ -36,7 +36,6 @@ const router = createBrowserRouter(
       <Route path="innerhome/sem6" element={<Sem6 />} />
       <Route path="innerhome/sem7" element={<Sem7 />} />
       <Route path="innerhome/sem8" element={<Sem8 />} />
-
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
       <Route path="login" element={<Login />} />
