@@ -11,98 +11,107 @@ function Signup() {
           Sign Up
         </h2>
 
-        <label className="block mb-2 font-medium text-gray-700">
-          Select Role
-        </label>
-        <select
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-          className="w-full p-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-        >
-          <option value="student">Student</option>
-          <option value="faculty">Faculty</option>
-        </select>
+        <form action="http://localhost:5000/" method="post">
+          <label className="block mb-2 font-medium text-gray-700">
+            Select Role
+          </label>
+          <select
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            className="w-full p-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+          </select>
 
-        {role === "faculty" ? (
-          <>
-            <input
-              type="text"
-              placeholder="Faculty Name"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-          </>
-        ) : (
-          <>
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="text"
-              placeholder="Enrollment Number"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-             {/* <input
+          {role === "faculty" ? (
+            <>
+              <input
+                type="text"
+                placeholder="Faculty Name"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+            </>
+          ) : (
+            <>
+              <input
+                type="text"
+                placeholder="Name"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              <input
+                type="text"
+                placeholder="Enrollment Number"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              {/* <input
               type="file"
               placeholder="Your Image"
               className="w-full p-2 mb-4 border rounded-md"
             />  */}
 
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
 
-          <label className="block mb-2 text-gray-700 font-medium">Upload Your Image</label>
-          <div className="relative w-full mb-4">
-            <input required
-              type="file"
-              accept="image/*"
-              id="fileInput"
-              className="hidden"
-              onChange={(e) => console.log(e.target.files[0])} // Handle file selection
-            />
-            <label
-              htmlFor="fileInput"
-              className="w-full p-2 border rounded-md cursor-pointer bg-white text-gray-600 text-center block"
+              <label className="block mb-2 text-gray-700 font-medium">
+                Upload Your Image
+              </label>
+              <div className="relative w-full mb-4">
+                <input
+                  required
+                  type="file"
+                  accept="image/*"
+                  id="fileInput"
+                  className="hidden"
+                  onChange={(e) => console.log(e.target.files[0])} // Handle file selection
+                />
+                <label
+                  htmlFor="fileInput"
+                  className="w-full p-2 border rounded-md cursor-pointer bg-white text-gray-600 text-center block"
+                >
+                  Choose Your Image
+                </label>
+              </div>
+            </>
+          )}
+
+          <button>
+            <Link
+              to="/login"
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md transition duration-200"
             >
-              Choose Your Image
-            </label>
-          </div>
-
-          </>
-        )}
-
-        <Link to="/login" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md transition duration-200">
-          Sign Up
-        </Link>
+              Sign Up
+            </Link>
+          </button>
+        </form>
       </div>
     </div>
   );
