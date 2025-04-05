@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router";
 
 function Signup() {
   const [role, setRole] = useState("student");
@@ -99,9 +100,9 @@ function Signup() {
           </>
         )}
 
-        <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md transition duration-200">
+        <Link to="/login" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md transition duration-200">
           Sign Up
-        </button>
+        </Link>
       </div>
     </div>
   );

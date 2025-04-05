@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
-// import { isLogin } from "../../helper";
 import Logo from "../../assets/logo3.png";
+import UserChecking from "../../helper";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(true);
+  const { isLogin, Yes, No } = UserChecking();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -44,7 +44,7 @@ export default function Header() {
           </div>
 
           <div
-            className={`w-full lg:ml-32 lg:flex lg:flex-grow lg:justify-between lg:w-auto sm:order-1 ${
+            className={`w-full lg:ml-44 lg:flex lg:flex-grow lg:justify-between lg:w-auto sm:order-1 ${
               isMobileMenuOpen ? "block" : "hidden"
             }`}
             id="mobile-menu-2"
@@ -105,6 +105,13 @@ export default function Header() {
             {/* authentication */}
             <div className="flex items-center sm:order-2 mt-2">
               {isLogin ? (
+                <Link
+                  to="/home"
+                  className="text-gray-900 bg-blue-400 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
+                >
+                  Sign Out
+                </Link>
+              ) : (
                 <>
                   <Link
                     to="login"
@@ -119,13 +126,6 @@ export default function Header() {
                     Sign Up
                   </Link>
                 </>
-              ) : (
-                <Link
-                  to="/"
-                  className="text-gray-900 bg-blue-400 hover:bg-gray-50 hover:shadow-md hover:shadow-gray-900 active:ring-4 active:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none transition duration-200"
-                >
-                  Sign Out
-                </Link>
               )}
             </div>
           </div>
