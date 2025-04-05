@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function UserChecking() {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
 
   const Yes = () => {
     setIsLogin(true);

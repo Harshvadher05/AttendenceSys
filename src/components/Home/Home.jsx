@@ -67,7 +67,7 @@ function Home() {
           </p>
         </div>
       </main>
-
+{console.log(isLogin)}
       <div className="flex justify-center items-center">
         <Link
           to="/innerhome"

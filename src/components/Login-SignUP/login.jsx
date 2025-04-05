@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 function Login() {
   const [role, setRole] = useState("student");
-  const {isLogin,Yes,No} = UserChecking();
+  const { isLogin, Yes, No } = UserChecking();
 
   return (
     <div className="flex items-center justify-center bg-blue-50 p-4">
@@ -13,58 +13,60 @@ function Login() {
           Login
         </h2>
 
-        <label className="block mb-2 font-medium text-gray-700">
-          Select Role
-        </label>
-        <select
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-          className="w-full p-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-        >
-          <option value="student">Student</option>
-          <option value="faculty">Faculty</option>
-        </select>
+        <form action="" method="post">
+          <label className="block mb-2 font-medium text-gray-700">
+            Select Role
+          </label>
+          <select
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            className="w-full p-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+          </select>
 
-        {role === "faculty" ? (
-          <>
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-          </>
-        ) : (
-          <>
-            <input
-              type="text"
-              placeholder="Enrollment Number"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full p-2 mb-4 border rounded-md"
-            />
-          </>
-        )}
+          {role === "faculty" ? (
+            <>
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+            </>
+          ) : (
+            <>
+              <input
+                type="text"
+                placeholder="Enrollment Number"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full p-2 mb-4 border rounded-md"
+              />
+            </>
+          )}
 
-        <Link
-          onClick={Yes}
-          to="/home"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md transition duration-200"
-        >
-          Login
-        </Link>
+          <Link
+            onClick={Yes}
+            to="/home"
+            className="w-auto mb-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md transition duration-200"
+          >
+            Login
+          </Link>
+        </form>
       </div>
     </div>
   );
